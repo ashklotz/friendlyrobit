@@ -9,12 +9,17 @@ client.on('ready', () => {
 client.login(process.env.BOT_TOKEN)
 
 client.on('message', msg => {
-    if (msg.content.toLowerCase().includes('ping')){
-        const sentMsg = ping(msg)
-        msg.channel.send(sentMsg)
+    if (msg.channel.id === process.env.ROBO_CHANNEL){
+
+        if (msg.content.toLowerCase().includes('ping')){
+            const sentMsg = ping(msg)
+            msg.channel.send(sentMsg)
+        }
+
     }
 })
 
 client.on('typingStart', (channel, user) => {
     console.log(`${user.tag} typing in ${channel.name}`)
+
 })
