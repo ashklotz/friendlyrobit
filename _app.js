@@ -7,3 +7,13 @@ client.on('ready', () => {
 })
 client.login(process.env.BOT_TOKEN)
 
+client.on('message', msg => {
+
+    if (msg.content.toLowerCase().includes('ping'))
+        msg.channel.send('pong')
+
+})
+
+client.on('typingStart', (channel, user) => {
+    console.log(`${user.tag} typing in ${channel.name}`)
+})
