@@ -34,7 +34,8 @@ client.on('message', msg => {
 
         //na'vi: "Hey! Listen!"
         if (msg.content == "Hey!" || msg.content == "Listen!"){
-            if (msg.member.id !== process.env.SELF_ID) console.log(`Na'vi activated by: ${msg.member.user.tag}`)
+            if (msg.member.id !== process.env.SELF_ID) 
+                console.log(`Na'vi activated by: ${msg.member.user.tag}`)
             setTimeout(() => {
                 const r = Math.floor(Math.random() * 100)
                 if (r > 40) msg.channel.send("Hey!")
