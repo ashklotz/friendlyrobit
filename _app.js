@@ -32,6 +32,14 @@ client.on('message', msg => {
             } else msg.channel.send('smol')
         }
 
+        //na'vi: "Hey! Listen!"
+        if (msg.content == "Hey!" || msg.content == "Listen!"){
+            setTimeout(() => {
+                const r = Math.floor(Math.random() * 100)
+                if (r > 40) msg.channel.send("Hey!")
+                else if (r > 10) msg.channel.send("Listen!")
+            },1100)
+        }
 
     }
 })
