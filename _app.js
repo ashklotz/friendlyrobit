@@ -13,14 +13,14 @@ client.on('message', msg => {
 
         //ping pong
         if (msg.content.toLowerCase().includes('ping')){
-            console.log(`${msg.member.user.tag} activated ping`)
+            console.log(`ping activated by: ${msg.member.user.tag}`)
             const sentMsg = ping(msg)
             msg.channel.send(sentMsg)
         }
 
         //will says pp, does some replies
         if (msg.content == 'PP'){
-            console.log(`${msg.member.user.tag} activated PP`)
+            console.log(`PP activated by: ${msg.member.user.tag}`)
             if (msg.member.id == process.env.WILL_ID){
                const msgOrder = ['BIG', 'NAY', '*MASSIVE*', 'NAY', '***HUMONGER***']
                 for (let index = 0; index < msgOrder.length; index++) {
