@@ -29,7 +29,10 @@ client.on('message', msg => {
                         msg.channel.send(element)
                     }, 800 * (index + 1))
                 }
-            } else msg.channel.send('smol')
+            } 
+            else if (msg.member.id == process.env.PEYTON_ID || msg.member.id == process.env.CARLEE_ID)
+                msg.channel.send('xtra smol')
+            else msg.channel.send('smol')
         }
 
         //na'vi: "Hey! Listen!"
